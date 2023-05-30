@@ -1,0 +1,26 @@
+$layout-breakpoint-m: 960px;
+
+:host {
+  display: block;
+  height: 60px;
+  width: 100%;
+}
+
+.login-block {
+  position: absolute;
+  right: 110px;
+  color: gold;
+}
+
+.time-block {
+  color: #1D4ED8;
+  font-size: 1rem;
+  position: absolute;
+  right: 0;
+  font-weight: 500;
+  padding: 5px 25px 8px 5px;
+  @media (max-width: $layout-breakpoint-m) {
+    padding: 0 18px 0 0;
+    font-size: .925rem;
+  }
+}

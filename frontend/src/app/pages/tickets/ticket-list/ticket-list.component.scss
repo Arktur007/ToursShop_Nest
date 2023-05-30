@@ -1,0 +1,16 @@
+
+.undefined-result {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 2rem;
+
+  &__img {
+    margin: 2rem 1.5rem 2rem 0;
+  }
+}
+
+.all-tours,
+.find-tours,
+.input-search {
+  margin: 0 1rem .5rem 1.75rem;
+}

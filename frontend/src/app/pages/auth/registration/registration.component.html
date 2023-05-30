@@ -1,0 +1,68 @@
+<form
+  class="form-wrapper"
+  #form="ngForm"
+  (ngSubmit)="sendForm(form)"
+>
+  <div class="input-wrapper mt-3">
+    <div class="left-padding">Логин</div>
+    <input
+      type="text"
+      class="input-item"
+      pInputText
+      autocomplete="login"
+      #login="ngModel"
+      ngModel
+      name="login"
+    >
+  </div>
+    <div class="input-wrapper">
+      <div class="left-padding">Пароль</div>
+      <input
+        class="input-item"
+        type="password"
+        pInputText
+        #psw="ngModel"
+        ngModel
+        name="psw"
+      >
+    </div>
+  <div class="input-wrapper">
+    <div class="left-padding">Подтвердите пароль</div>
+    <input
+      type="password"
+      class="input-item"
+      pInputText
+      #pswRepeat="ngModel"
+      ngModel
+      name="pswRepeat"
+    >
+  </div>
+  <div class="input-wrapper">
+    <div class="left-padding">Email</div>
+    <input
+      type="text"
+      class="input-item"
+      pInputText
+      autocomplete="email"
+      ngModel
+      name="email"
+      placeholder="example@gmail.com"
+    >
+  </div>
+  <div class="input-wrapper">
+    <div class="left-padding">Номер карты</div>
+    <input
+      type="text"
+      class="input-item"
+      pInputText
+      ngModel
+      name="cardNumber"
+      placeholder="123456"
+    >
+  </div>
+  <footer class="footer">
+    <button class="registration-button btn btn-success" [disabled]="!login || !psw || !pswRepeat">
+      Зарегистрироваться
+    </button>
+  </footer>
+</form>

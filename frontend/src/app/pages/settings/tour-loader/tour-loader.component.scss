@@ -1,0 +1,39 @@
+.form-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100%;
+  width: 29rem;
+  flex: 1;
+
+}
+
+.input-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-item {
+  width: 12rem;
+  height: 2.5rem;
+  border-radius: 5px;
+  margin: 1rem 2rem 1rem 1rem;
+}
+
+.left-padding {
+  padding-left: 2.5rem;
+}
+
+.create-button {
+  width: 10rem;
+  height: 2.75rem;
+  margin-bottom: 2rem;
+  color: cadetblue;
+  box-shadow: rgba(0, 0, 0, 0.16) 0 3px 6px, rgba(0, 0, 0, 0.23) 0 3px 6px;
+}
+
+
+.btn-success {
+  background-color: darkblue;
+  width: 16rem;
+}

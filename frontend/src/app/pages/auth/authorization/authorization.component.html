@@ -1,0 +1,60 @@
+<div *ngIf="!userService.getUser()" class="form-container">
+  <div class="input-wrapper mt-3">
+    <div class="title-padding">{{loginText}}</div>
+    <input
+      class="input-item"
+      type="text"
+      pInputText
+      autocomplete="login"
+      [(ngModel)]="login"
+    >
+  </div>
+  <div class="input-wrapper">
+    <div class="title-padding">{{pswText}}</div>
+    <input
+      class="input-item"
+      type="password"
+      pInputText
+      autocomplete="password"
+      [(ngModel)]="psw"
+    >
+  </div>
+  <div *ngIf="useUserCard" class="d-inline-flex align-items-center justify-content-start m-4">
+    <p-checkbox
+      class="mx-3"
+      label="Запомнить"
+      [(ngModel)]="isRememberMe"
+      [binary]="true"
+    >
+    </p-checkbox>
+    <p-checkbox
+      class="mx-3"
+      (onChange)="vipStatusSelected($event)"
+      label="Есть карта лояльности"
+      [(ngModel)]="selectedValue"
+      [binary]="true"
+    >
+      CheckBox
+    </p-checkbox>
+  </div>
+  <div *ngIf="selectedValue" class="d-inline-flex align-items-center justify-content-between">
+    <div class="title-padding">Номер карты</div>
+    <input
+      class="input-item"
+      type="text"
+      pInputText
+      [(ngModel)]="cardNumber"
+      placeholder="123456"
+    >
+  </div>
+  <div class="button-wrapper">
+    <button
+      class="authorization-button btn btn-success"
+      (click)="onAuth($event)"
+      type="button"
+      [disabled]="!login || !psw"
+    >
+      {{authTextButton}}
+    </button>
+  </div>
+</div>

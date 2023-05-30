@@ -1,0 +1,51 @@
+<div *ngIf="ticketsFilteredCount; else noFoundTickets" class="h-100 overflow-auto">
+  <div class="search-block">
+    <div class="all-tours">Всего туров: {{ tickets.length }}</div>
+    <div class="find-tours">Найдено туров: <b>{{ ticketsFilteredCount }}</b></div>
+    <p class="my-3">
+      <input
+        class="input-search"
+        placeholder="Введите значение"
+        type="text"
+        [(ngModel)]="inputSearch"
+        (input)="searchTickets"
+      >
+    </p>
+  </div>
+  <div
+    appBlocksStyle
+    #tourWrap
+    #blockDirective = 'blocksStyle'
+    (renderComplete)="directiveRenderComplete($event)"
+    class = "d-flex flex-wrap justify-content-around"
+    [selector]="'.ticket-item'"
+    [initFirst]="true"
+  >
+    <div
+      *ngFor="let ticket of ticketsCopy; let i = index"
+      class="m-2"
+      [id]="'ticket_'+i"
+      (click)="goToTicketInfoPage(ticket)"
+    >
+      <app-ticket-list-item [ticket]="ticket"></app-ticket-list-item>
+    </div>
+  </div>
+</div>
+<ng-template #noFoundTickets>
+  <div class="search-block">
+    <div class="all-tours">Всего туров: {{ tickets.length }}</div>
+    <div class="find-tours">Найдено туров: <b>{{ ticketsFilteredCount }}</b></div>
+    <p class="my-3">
+      <input
+        class="input-search"
+        placeholder="Введите значение"
+        type="text"
+        [(ngModel)]="inputSearch"
+        (input)="searchTickets()"
+      >
+    </p>
+  </div>
+  <div class="undefined-result">
+    <p>Туры не найдены...</p>
+  </div>
+</ng-template>
